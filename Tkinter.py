@@ -28,14 +28,14 @@ def valik():
 
 def uus_aken(ind: int):
     if askyesno('Вопрос','Могу я открыть?'):
-        showinfo('Ответ', 'Открой окно')
+        showinfo('Ответ', 'Открываю окно')
     else:
-        showinfo('Ответ', 'Закрой окно')
-        window.destroy()
-    window2 = Toplevel()
-    window2.title('Настройки')
-    #window2.geometry('300x200')
-    tabs = ttk.Notebook(window2)
+        showinfo('Ответ', 'Закрываю окно')
+        aken.destroy()
+    aken2 = Toplevel()
+    aken2.title('Настройки')
+    #aken2.geometry('300x200')
+    tabs = ttk.Notebook(aken2)
     texts = ['1.gif', '2.gif', '3.gif', '4.gif', '5.gif']
     textn = ['1.gif', '2.gif', '3.gif', '4.gif', '5.gif']
     tabn = ['tab0', 'tab1', 'tab2', 'tab3', 'tab4']
@@ -45,13 +45,13 @@ def uus_aken(ind: int):
         tabn[i] = Frame(tabs)
         textn[i] = PhotoImage(file = texts[i]).subsample(1)
         tabs.add(tabn[i], text = texts[i])
-        cann[i] = Canvas(tabn[i], height = 600, width = 800)
+        cann[i] = Canvas(tabn[i], height = 800, width = 1000)
         cann[i].create_image(0,0, image = textn[i], anchor = NW)
         cann[i].pack()
 
     tabs.grid(row = 0, column = 0)
     tabs.select(ind)
-    window2.mainloop()
+    aken2.mainloop()
 
 aken = Tk()
 aken.title("Название окна")
